@@ -2,11 +2,11 @@
     Private radio As Double
     Private altura As Double
     Sub Main()
-        Validar()
+        Positivos()
         Console.WriteLine("El volumen del cilindro es: " & VolumenCilindro(radio, altura))
         Console.ReadKey()
     End Sub
-    Private Sub Validar()
+    Private Sub Positivos()
         Do
             Console.Write("Ingrese radio de la base: ")
             radio = Console.ReadLine()

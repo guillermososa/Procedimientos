@@ -6,7 +6,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{531E5ABF-B4A7-4CC9-B145-7FF20A2ED9E5}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <StartupObject>Procedimientos.TP3_01_Fecho_y_Hora</StartupObject>
+    <StartupObject>Procedimientos.TP3_08_Subrutina_Sobrecargada</StartupObject>
     <RootNamespace>Procedimientos</RootNamespace>
     <AssemblyName>Procedimientos</AssemblyName>
     <FileAlignment>512</FileAlignment>
@@ -68,6 +68,9 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Module1.vb" />
+    <Compile Include="TP3_08_Subrutina_Sobrecargada.vb" />
+    <Compile Include="TP3_07_Funcion_Sobrecargada.vb" />
     <Compile Include="TP3_03_Potencia.vb" />
     <Compile Include="TP3_02_SumarDias.vb" />
     <Compile Include="TP3_01_Fecho_y_Hora.vb" />

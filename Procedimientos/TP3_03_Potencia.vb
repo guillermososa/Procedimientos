@@ -5,7 +5,8 @@
         num = Console.ReadLine()
         Console.WriteLine()
         For i = 2 To 6
-            Console.WriteLine("La potencia de {0} elevado a la {1} es: {2}.", num, i, Potencia(num, i))
+            Console.WriteLine("La potencia de {0} elevado a la {1} es: {2}.",
+                              num, i, Potencia(num, i))
         Next
         Console.ReadKey()
     End Sub
