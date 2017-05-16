@@ -1,22 +1,26 @@
-﻿Module TP3_09_Superficie
+Module TP3_09_Superficie
+    Enum opcion
+        Cuadrado = 1
+        Rectangulo = 2
+        Trapecio = 3
+    End Enum
     Sub Main()
         Dim valor1, valor2, valor3 As Double
-        Dim op As UShort
-        Console.Write("Seleccione una opcion para calcular superficio(1=Cuadrado, 2=Rectangulo, 3=Trapecio): ")
+        Dim op As opcion
+        Mostrar("Seleccione una opcion para calcular superficie(1=Cuadrado, 2=Rectangulo, 3=Trapecio): ")
         op = Console.ReadLine()
         If op = 1 Or op = 2 Then
-            Console.Write("Ingrese lado o base: ")
+            Mostrar("Ingrese lado o base: ")
             valor1 = Console.ReadLine()
-            Console.Write("Ingrese lado o altura: ")
+            Mostrar("Ingrese lado o altura: ")
             valor2 = Console.ReadLine()
             Mostrar("El area o superficie es: " & Area(valor1, valor2))
-        End If
-        If op = 3 Then
-            Console.Write("Ingrese base mayor: ")
+        Else
+            Mostrar("Ingrese base mayor: ")
             valor1 = Console.ReadLine()
-            Console.Write("Ingrese base menor: ")
+            Mostrar("Ingrese base menor: ")
             valor2 = Console.ReadLine()
-            Console.Write("Ingrese altura: ")
+            Mostrar("Ingrese altura: ")
             valor3 = Console.ReadLine()
             Mostrar("El area o superficie es: " & Area(valor1, valor2, valor3))
         End If
