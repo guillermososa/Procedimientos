@@ -1,119 +1,51 @@
-﻿Module TP3_08_Subrutina_Sobrecargada
-    Enum operaciones As UShort
+﻿Module TP3_07_Funcion_Sobrecargada
+    Enum operaciones
         suma
         resta
         multiplicacion
         division
     End Enum
-    Private operacion As operaciones
     Sub Main()
-        Dim num1 As UShort = 24
-        Dim num2 As UShort = 2
-        Dim num3 As UShort = 3
-        Dim num4 As UShort = 4
-        'Operaciones con 2 argumentos
-        Resultado(operacion.suma, num1, num2)
-        Resultado(operacion.resta, num1, num2)
-        Resultado(operacion.multiplicacion, num1, num2)
-        Resultado(operacion.division, num1, num2)
+        Dim num1 As Integer = 24
+        Dim num2 As Integer = 2
+        Dim num3 As Integer = 3
+        Dim num4 As Integer = 4
+        'operaciones con 2 argumentos
+        Mostrar("Suma de dos numeros: " & Calcular(operaciones.suma, num1, num2))
+        Mostrar("Resta de dos numeros: " & Calcular(operaciones.resta, num1, num2))
+        Mostrar("Multiplicacion de dos numeros: " & Calcular(operaciones.multiplicacion, num1, num2))
+        Mostrar("Division de dos numeros: " & Calcular(operaciones.division, num1, num2))
         Mostrar("")
-        'Operaciones con 3 argumentos
-        Resultado(operacion.suma, num1, num2, num3)
-        Resultado(operacion.resta, num1, num2, num3)
-        Resultado(operacion.multiplicacion, num1, num2, num3)
-        Resultado(operacion.division, num1, num2, num3)
+        'operaciones con 3 argumentos
+        Mostrar("Suma de tres numeros: " & Calcular(operaciones.suma, num1, num2, num3))
+        Mostrar("Resta de tres numeros: " & Calcular(operaciones.resta, num1, num2, num3))
+        Mostrar("Multiplicacion de tres numeros: " & Calcular(operaciones.multiplicacion, num1, num2, num3))
+        Mostrar("Division de tres numeros: " & Calcular(operaciones.division, num1, num2, num3))
         Mostrar("")
-        'Operaciones con 4 argumentos
-        Resultado(operacion.suma, num1, num2, num3, num4)
-        Resultado(operacion.resta, num1, num2, num3, num4)
-        Resultado(operacion.multiplicacion, num1, num2, num3, num4)
-        Resultado(operacion.division, num1, num2, num3, num4)
-        Mostrar("")
+        'operaciones con 4 argumentos
+        Mostrar("Suma de cuatro numeros: " & Calcular(operaciones.suma, num1, num2, num3, num4))
+        Mostrar("Resta de cuatro numeros: " & Calcular(operaciones.resta, num1, num2, num3, num4))
+        Mostrar("Multiplicacion de cuatro numeros: " & Calcular(operaciones.multiplicacion, num1, num2, num3, num4))
+        Mostrar("Division de cuatro numeros: " & Calcular(operaciones.division, num1, num2, num3, num4))
         Console.ReadKey()
     End Sub
-    Private Sub Resultado(op As UShort, num1 As UShort, num2 As UShort)
+    Private Function Calcular(op As Integer, num1 As Integer, num2 As Integer) As Integer
         Select Case op
-            Case operacion.suma
-                Mostrar("Suma de dos numeros: " & Calcular(operacion.suma, num1, num2))
-            Case operacion.resta
-                Mostrar("Resta de dos numeros: " & Calcular(operacion.resta, num1, num2))
-            Case operacion.multiplicacion
-                Mostrar("Multiplicacion de dos numeros: " & Calcular(operacion.multiplicacion, num1, num2))
-            Case operacion.division
-                Mostrar("Division de dos numeros: " & Calcular(operacion.division, num1, num2))
-            Case Else
-                Mostrar("")
-        End Select
-    End Sub
-    Private Sub Resultado(op As UShort, num1 As UShort, num2 As UShort, num3 As UShort)
-        Select Case op
-            Case operacion.suma
-                Mostrar("Suma de tres numeros: " & Calcular(operacion.suma, num1, num2, num3))
-            Case operacion.resta
-                Mostrar("Resta de tres numeros: " & Calcular(operacion.resta, num1, num2, num3))
-            Case operacion.multiplicacion
-                Mostrar("Multiplicacion de tres numeros: " & Calcular(operacion.multiplicacion, num1, num2, num3))
-            Case operacion.division
-                Mostrar("Division de tres numeros: " & Calcular(operacion.division, num1, num2, num3))
-            Case Else
-                Mostrar("")
-        End Select
-    End Sub
-    Private Sub Resultado(op As UShort, num1 As UShort, num2 As UShort, num3 As UShort, num4 As UShort)
-        Select Case op
-            Case operacion.suma
-                Mostrar("Suma de cuatro numeros: " & Calcular(operacion.suma, num1, num2, num3, num4))
-            Case operacion.resta
-                Mostrar("Resta de cuatro numeros: " & Calcular(operacion.resta, num1, num2, num3, num4))
-            Case operacion.multiplicacion
-                Mostrar("Multiplicacion de cuatro numeros: " & Calcular(operacion.multiplicacion, num1, num2, num3, num4))
-            Case operacion.division
-                Mostrar("Division de cuatro numeros: " & Calcular(operacion.division, num1, num2, num3, num4))
-            Case Else
-                Mostrar("")
-        End Select
-    End Sub
-    Private Function Calcular(op As UShort, num1 As UShort, num2 As UShort) As Integer
-        Select Case op
-            Case operacion.suma
+            Case operaciones.suma
                 Return num1 + num2
-            Case operacion.resta
+            Case operaciones.resta
                 Return num1 - num2
-            Case operacion.multiplicacion
+            Case operaciones.multiplicacion
                 Return num1 * num2
-            Case operacion.division
+            Case Else
                 Return num1 / num2
-            Case Else
-                Return 0
         End Select
     End Function
-    Private Function Calcular(op As UShort, num1 As UShort, num2 As UShort, num3 As UShort) As Integer
-        Select Case op
-            Case operacion.suma
-                Return num1 + num2 + num3
-            Case operacion.resta
-                Return num1 - num2 - num3
-            Case operacion.multiplicacion
-                Return num1 * num2 * num3
-            Case operacion.division
-                Return num1 / num2 / num3
-            Case Else
-                Return 0
-        End Select
+    Private Function Calcular(op As Integer, num1 As Integer, num2 As Integer, num3 As Integer) As Integer
+        Return Calcular(op, Calcular(op, num1, num2), num3)
     End Function
-    Private Function Calcular(op As UShort, num1 As UShort, num2 As UShort, num3 As UShort, num4 As UShort) As Integer
-        Select Case op
-            Case operacion.suma
-                Return num1 + num2 + num3 + num4
-            Case operacion.resta
-                Return num1 - num2 - num3 - num4
-            Case operacion.multiplicacion
-                Return num1 * num2 * num3 * num4
-            Case operacion.division
-                Return num1 / num2 / num3 / num4
-            Case Else
-                Return 0
-        End Select
+    Private Function Calcular(op As Integer, num1 As Integer, num2 As Integer, num3 As Integer, num4 As Integer) As Integer
+        Return Calcular(op, Calcular(op, Calcular(op, num1, num2), num3), num4)
     End Function
     Private Sub Mostrar(mensaje As String)
         Console.WriteLine(mensaje)
