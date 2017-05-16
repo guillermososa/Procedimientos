@@ -33,6 +33,6 @@ Module TP3_09_Superficie
         Return (bmay + bmen) / 2 * h
     End Function
     Private Sub Mostrar(mensaje As String)
-        Console.WriteLine(mensaje)
+        Console.Write(mensaje)
     End Sub
 End Module
